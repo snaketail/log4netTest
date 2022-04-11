@@ -11,7 +11,6 @@ namespace Log4NetTest
         {
             Console.WriteLine("Hello World!");
 
-            throw new Exception("abc");
 
             log.Debug("Now Let's Debug");
 
@@ -20,6 +19,10 @@ namespace Log4NetTest
             log.Warn("This is warning message");
 
             log.Error("This is my error message");
+
+            Exception e = new DivideByZeroException();
+
+            log.Error("Exception Catched", e);
 
             Console.ReadLine();
         }
